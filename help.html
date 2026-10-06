@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinBotHub Help</title>
+  <meta name="description" content="How FinBotHub keeps your chats private, your recovery key, confirming a new device, and using your own market data.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <style>
+    :root {
+      --bg: #f4f6fa;
+      --card: #ffffff;
+      --text: #1f2a3a;
+      --muted: #5b6678;
+      --accent: #16a34a;
+      --border: #e2e7ef;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1520;
+        --card: #182131;
+        --text: #e8edf5;
+        --muted: #9aa6b8;
+        --accent: #34d26b;
+        --border: #263247;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 32px 16px 48px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    main { width: 100%; max-width: 720px; margin: 0 auto; }
+    header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    header img { width: 48px; height: 48px; }
+    header a { color: inherit; text-decoration: none; font-weight: 700; font-size: 1.25rem; }
+    h1 { margin: 16px 0 4px; font-size: 2rem; letter-spacing: -0.02em; }
+    .lead { margin: 0 0 24px; color: var(--muted); }
+    nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    nav.toc a {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    nav.toc a:hover { border-color: var(--accent); }
+    section.card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 8px 24px 16px;
+      margin-bottom: 20px;
+      scroll-margin-top: 16px;
+    }
+    h2 { margin: 16px 0 8px; font-size: 1.35rem; }
+    h3 { margin: 18px 0 4px; font-size: 1.05rem; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0 0 12px; padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    .path { font-weight: 600; }
+    .note {
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 12px;
+      color: var(--muted);
+    }
+    a { color: var(--accent); }
+    footer { margin-top: 32px; font-size: 0.85rem; color: var(--muted); text-align: center; }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="assets/icon-512.png" alt="">
+      <a href="/">FinBotHub</a>
+    </header>
+
+    <h1>Help</h1>
+    <p class="lead">How FinBotHub keeps your chats private, what your recovery key is for, and how to use your own market data.</p>
+
+    <nav class="toc" aria-label="On this page">
+      <a href="#encryption">Encryption</a>
+      <a href="#backup">Chat backup and recovery key</a>
+      <a href="#new-device">Confirming a new device</a>
+      <a href="#market-data">Your own market data</a>
+    </nav>
+
+    <section class="card" id="encryption">
+      <h2>Encryption</h2>
+      <p>Your private chats (direct messages and private rooms) are <strong>end-to-end encrypted</strong>. They're locked on your device and unlocked only on the devices of the people in the chat. FinBotHub's servers pass them on but can't read them.</p>
+      <p>Public places aren't private: stock rooms, the Board, the Feed and other public rooms are open to everyone who joins or follows them.</p>
+      <p>Each of your devices has its own keys. That's why a new device needs to be confirmed before it can read your private chats: see <a href="#new-device">Confirming a new device</a>.</p>
+      <p class="note">Bots only see what you send to them, what's in the chats you add them to, and what you allow with a permission.</p>
+    </section>
+
+    <section class="card" id="backup">
+      <h2>Chat backup and recovery key</h2>
+      <p><strong>Chat backup</strong> keeps an encrypted copy of the keys to your private chats on FinBotHub's servers, so a new device or a reinstalled app can read your message history. The backup is locked with your <strong>recovery key</strong>, which only you have: FinBotHub can't unlock it.</p>
+
+      <h3>Recovery key or passphrase</h3>
+      <p>When you set up recovery, you choose one of:</p>
+      <ul>
+        <li><strong>A generated recovery key</strong>: 48 random characters. The safest choice. Write it down or keep it in a password manager.</li>
+        <li><strong>Your own passphrase</strong>: at least 8 characters. Easier to remember, but a short or common passphrase is easier to guess. The longer the better: several unrelated words make a strong one. The app shows how strong it looks as you type.</li>
+      </ul>
+      <p>To change it: <span class="path">Settings › Chat backup › Change recovery key</span>. The old key or passphrase stops working.</p>
+
+      <h3>Your saved recovery key</h3>
+      <p>Once you set up recovery, or enter your recovery key on a device, the app keeps it on that device, encrypted. To see it again: <span class="path">Settings › Chat backup › Saved recovery key › Show</span>. It asks for your Face ID, fingerprint or screen lock first, and you can copy it from there.</p>
+      <ul>
+        <li><strong>iPhone and iPad:</strong> it's kept in your keychain and, by default, in <strong>iCloud Keychain</strong> (end-to-end encrypted by Apple), so your other Apple devices have it too. Turn off <em>Keep it on my other Apple devices</em> to keep it on this device only.</li>
+        <li><strong>Android:</strong> it's kept on the phone and, by default, in your <strong>Google backup</strong> (Block Store, end-to-end encrypted with your screen lock; no copy is made if the phone has no screen lock). A new phone you set up from this one, or from your Google backup, gets it too. Turn off <em>Keep it in my Google backup</em> to keep it on this phone only.</li>
+      </ul>
+      <p class="note">Keep a copy somewhere safe as well. If you lose your recovery key and every device you're signed in on, nobody can recover your old encrypted messages, not even FinBotHub.</p>
+    </section>
+
+    <section class="card" id="new-device">
+      <h2>Confirming a new device</h2>
+      <p>When you sign in on a new device, or after reinstalling the app, FinBotHub asks you to <strong>confirm your identity</strong>. Confirming lets the device read your private chats and their history. Pick one:</p>
+      <ol>
+        <li><strong>Use saved recovery key</strong>: shown when the device already has your key (from iCloud Keychain, your Google backup, or an earlier sign-in). One tap.</li>
+        <li><strong>Enter recovery key</strong>: type or paste your recovery key, or the passphrase you chose.</li>
+        <li><strong>Can't confirm?</strong>: if you have neither, you can reset your identity and start fresh. Your account, contacts, settings and chat list are kept, but you lose access to your old encrypted messages, and people you chat with see that your identity changed. Then set up a new recovery key in <span class="path">Settings › Chat backup</span>.</li>
+      </ol>
+      <p>Everything else works on an unconfirmed device too: rooms, the Board, the Feed and the Market.</p>
+    </section>
+
+    <section class="card" id="market-data">
+      <h2>Your own market data</h2>
+      <p>FinBotHub shows market prices from its own data. If you have a real-time account with <strong>Alpaca</strong> (the SIP feed, Algo Trader Plus) or <strong>Massive</strong>, you can use it instead: <span class="path">Settings › Market data</span>. The watchlist, movers and charts then use your data.</p>
+      <p>Your keys stay on your device, encrypted, and are sent only to your provider. FinBotHub only reads market data with them, never your trading account.</p>
+
+      <h3>Relaying to your devices</h3>
+      <p>Alpaca and Massive allow one live connection per key, so only one device can stream at a time. Tap <strong>Relay to my devices</strong> and FinBotHub holds that one connection for you, with your key kept encrypted, and passes the data to all your devices. You get a <strong>relay address and relay key</strong>; your devices signed in to FinBotHub use them by themselves.</p>
+      <ul>
+        <li><strong>Virtual Trade</strong> trades at your own data only while it's relayed and comes from your provider's own addresses. Otherwise it uses FinBotHub's prices.</li>
+        <li><strong>Reset relay key</strong> gives you a new key; devices using the old one are cut off and pick up the new one by themselves. <strong>Stop relaying</strong> deletes your key from FinBotHub's servers.</li>
+        <li>If your provider can't be reached for a while, your devices show that updates are unavailable, and carry on by themselves when it's back.</li>
+      </ul>
+
+      <h3>Using your relay on your other FinBotHub accounts</h3>
+      <p>If you have more than one FinBotHub account, you can use one account's relay on the others:</p>
+      <ol>
+        <li>On the account that relays: <span class="path">Settings › Market data › Relay address and key</span>, and copy the Key ID and Secret key (Massive: the API key).</li>
+        <li>On the other account: <span class="path">Settings › Market data › My Alpaca account › Advanced</span> (or My Massive account), tap <strong>Use a relay from my other FinBotHub account</strong>, enter the key, and save.</li>
+      </ol>
+      <p>That account and its devices then use your data, and its Virtual Trade trades at it. If the relaying account resets the key or stops relaying, the other account goes back to FinBotHub's prices and says so.</p>
+      <p class="note">Relays are for your personal use only: add yours only to your own accounts, never anyone else's. See the <a href="/terms">Terms</a>, and your provider's terms.</p>
+    </section>
+
+    <p>Still stuck? Write to <a href="mailto:info@finbothub.com">info@finbothub.com</a>.</p>
+  </main>
+
+  <footer>
+    <a href="/">Home</a> · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/copyright">Copyright</a><br>
+    &copy; <span id="year">2026</span> FinBotHub
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
